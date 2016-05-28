@@ -44,7 +44,6 @@ if (! function_exists('network_details')) {
 
         if (! preg_match('/^([0-9]{1,3}\.){3}[0-9]{1,3}(( ([0-9]{1,3}\.){3}[0-9]{1,3})|(\/[0-9]{1,2}))$/', $my_net_info)) {
             $details->error = "Error - invalid input";
-
             return($details);
         }
 
@@ -151,7 +150,6 @@ if (! function_exists('network_details')) {
         $details->host_max = bintodq($bin_last);
         $details->hosts_total = $host_total;
         $details->network_slash = $cdr_nmask;
-
         return($details);
     }
 }

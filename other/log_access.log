@@ -1,2 +1,6 @@
 Mar 24 07:56:31 dev 14612 6 U:Administrator C:report F:show_report I:172.16.73.1 M:Access
 May 11 13:07:08 dev 12491 6 U:Administrator C:devices F:index I:172.16.73.1 M:Access
+May 28 10:46:14 monitor.amplifinity.com 16466 5 U:Administrator C:admin F:edit_config I:192.168.88.239 M:Access
+May 28 11:34:42 monitor.amplifinity.com 27841 5 U:Administrator C:admin F:edit_config I:192.168.88.239 M:Access
+May 28 11:39:46 monitor.amplifinity.com 27842 5 U:Administrator C:admin F:edit_config I:192.168.88.239 M:Access
+May 28 11:54:11 monitor.amplifinity.com 30166 5 U:Administrator C:admin F:edit_config I:192.168.88.239 M:Access

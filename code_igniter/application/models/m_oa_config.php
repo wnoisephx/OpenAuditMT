@@ -390,7 +390,9 @@ class M_oa_config extends MY_Model
         $networks = array();
         foreach ($ip_address_array as $network) {
             $test = network_details($network);
-            $networks[] = $test->network . '/' . $test->network_slash;
+	    if($test->error == '') {   // check for error 
+                $networks[] = $test->network . '/' . $test->network_slash;
+            }
         }
         return ($networks);
     }
