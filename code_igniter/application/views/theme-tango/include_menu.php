@@ -152,6 +152,13 @@ var modal_content_image = "";
                 </ul>
             </li>
 
+            <li><a href='javascript:void(0)'><?php echo __('Credentials')?></a>
+                <ul>
+                    <li><a href='<?php echo $oa_web_index?>/admin_credentials/list_credentials'><?php echo __('List Credentials')?></a></li>
+                    <li><a href='<?php echo $oa_web_index?>/admin_credentials/add_credentials'><?php echo __('Add Credentials')?></a></li>
+                </ul>
+           </li>
+
             <li><a href='javascript:void(0)'><?php echo __('Database')?></a>
                 <ul>
                     <!--
@@ -213,8 +220,8 @@ var modal_content_image = "";
             </li>
             <li><a href='javascript:void(0)'><?php echo __('Networks')?></a>
                 <ul>
-                    <li><a href='<?php echo $oa_web_index?>/networks'><?php echo __('View Networks')?></a></li>
-                    <li><a href='<?php echo $oa_web_index?>/networks?action=create'><?php echo __('Add Network')?></a></li>
+                    <li><a href='<?php echo $oa_web_index?>/admin_network/list_networks'><?php echo __('List Networks')?></a></li>
+                    <li><a href='<?php echo $oa_web_index?>/admin_network/add_network'><?php echo __('Add Network')?></a></li>
                 </ul>
             </li>
             <li><a href='javascript:void(0)'><?php echo __('Organisations')?></a>
@@ -222,6 +229,13 @@ var modal_content_image = "";
                     <li><a href='<?php echo $oa_web_index?>/admin_org/list_orgs'><?php echo __('List Organisations')?></a></li>
                     <li><a href='<?php echo $oa_web_index?>/admin_org/add_org'><?php echo __('Add Organisation')?></a></li>
                     <li><a href='<?php echo $oa_web_index?>/admin_org/add_orgs'><?php echo __('Add Multiple Organisations')?></a></li>
+                </ul>
+            </li>
+
+            <li><a href='javascript:void(0)'><?php echo __('Proxies')?></a>
+                <ul>
+                    <li><a href='<?php echo $oa_web_index?>/admin_proxy/list_proxies'><?php echo __('List Proxies')?></a></li>
+                    <li><a href='<?php echo $oa_web_index?>/admin_proxy/add_proxy'><?php echo __('Add Proxy')?></a></li>
                 </ul>
             </li>
 

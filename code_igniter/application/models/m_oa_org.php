@@ -108,7 +108,7 @@ class M_oa_org extends MY_Model
 
     public function get_all_orgs()
     {
-        $sql = "SELECT o1.*, o2.name as parent_name, count(oa_group_sys.system_id) as total FROM oa_org o1 LEFT JOIN oa_org o2 ON o1.parent_id = o2.id LEFT JOIN oa_group_sys ON oa_group_sys.group_id = o1.group_id GROUP BY o1.id ORDER BY o1.name";
+	$sql = "SELECT o1.*, o2.name as parent_name, count(oa_location.id) as total FROM oa_org o1 LEFT JOIN oa_org o2 ON o1.parent_id = o2.id LEFT JOIN oa_location ON oa_location.org_id = o1.id GROUP BY o1.id ORDER BY o1.name";
         $sql = $this->clean_sql($sql);
         $query = $this->db->query($sql);
         $result = $query->result();
@@ -198,6 +198,17 @@ class M_oa_org extends MY_Model
         $sql = $this->clean_sql($sql);
         $data = array("$user_id", "$user_id", "$id");
         $query = $this->db->query($sql, $data);
+        $result = $query->result();
+
+        return ($result);
+    }
+
+    public function get_org_locations($id=0)
+    {
+        $sql="select location_name,location_comments from oa_location where location_org_id = '$id'";
+        $sql = $this->clean_sql($sql);
+ #      $data = array("$location_name","$location_comment");
+        $query = $this->db->query($sql);
         $result = $query->result();
 
         return ($result);

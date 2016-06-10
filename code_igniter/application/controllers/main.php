@@ -62,7 +62,7 @@ class main extends MY_Controller
             header('Cache-Control: max-age=0');
             header('HTTP/1.1 200 OK');
         } else {
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
     }
 
@@ -320,10 +320,10 @@ class main extends MY_Controller
             $this->user->access_level = $this->m_oa_group->get_group_access($_POST['group_id'], $this->user->id);
             if ($this->user->access_level < '10') {
                 // not enough permission - redirect
-                redirect('main/list_groups/');
+                redirect('main/list_orgs/');
             }
         } else {
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
         $this->load->model("m_system");
         $this->load->model("m_oa_location");
@@ -356,7 +356,7 @@ class main extends MY_Controller
     public function process_edit_systems()
     {
         if (!(isset($_POST['submit']))) {
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
         $this->load->model("m_oa_group");
         $this->load->model("m_edit_log");
@@ -367,10 +367,10 @@ class main extends MY_Controller
             $this->user->access_level = $this->m_oa_group->get_group_access($_POST['group_id'], $this->user->id);
             if ($this->user->access_level < '10') {
                 // not enough permission - redirect
-                redirect('main/list_groups/');
+                redirect('main/list_orgs/');
             }
         } else {
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
         $this->load->model("m_system");
         $this->load->library('encrypt');
@@ -496,10 +496,10 @@ class main extends MY_Controller
             $this->user->access_level = $this->m_oa_group->get_group_access($this->data['id'], $this->user->id);
             if ($this->user->access_level < '3') {
                 // not even VIEW permission - redirect
-                redirect('main/list_groups/');
+                redirect('main/list_orgs/');
             }
         } else {
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
         $this->load->model("m_systems");
         $this->data['heading'] = 'List Devices';
@@ -565,13 +565,13 @@ class main extends MY_Controller
     {
         # TODO: for completeness we should check if user is admin and if not, check is search is allowed in confg variable
         if ($this->data['id'] == '') {
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
         if (($this->data['id'] > '0') && (is_int($this->data['id']))) {
             // we must check to see if the user has at least VIEW permission on the group
             if ($this->m_oa_group->get_group_access($this->data['id'], $this->user->id) < '3') {
                 // not even VIEW permission - redirect
-                redirect('main/list_groups/');
+                redirect('main/list_orgs/');
             }
         }
         if (isset($_POST["search"])) {
@@ -601,7 +601,7 @@ class main extends MY_Controller
         $this->data['search'] = html_entity_decode($this->data['search']);
         if ($this->data['search'] == '') {
             //exit();
-            redirect('main/list_groups/');
+            redirect('main/list_orgs/');
         }
 
         if (isset($_POST['format'])) {
@@ -1108,7 +1108,7 @@ class main extends MY_Controller
                 $log_details->severity = 5;
                 $log_details->message = 'Error on edit user details submission for '.$details->user_name;
                 stdlog($log_details);
-                redirect('main/list_groups/');
+                redirect('main/list_orgs/');
             }
         }
     }
@@ -1585,5 +1585,16 @@ class main extends MY_Controller
         } else {
             return('y');
         }
+    }
+
+    public function list_orgs()
+    {
+        $this->load->model("m_oa_org");
+        $this->data['query'] = $this->m_oa_org->get_all_orgs($this->user->id);
+        $this->data['heading'] = 'Organizations';
+        $this->data['include'] = 'v_main_orgs';
+        $this->data['sortcolumn'] = '1';
+        $this->data['export_report'] = 'y';
+        $this->determine_output($this->uri->segment($this->uri->total_rsegments()));
     }
 }

@@ -35,7 +35,7 @@
 ?>
 <div id="header" style='height: 70px; margin-left: auto; margin-right: auto; padding: 0px 0px 0px 0px; text-align: left;'>
 	<div style="width:260px; float: left; text-align: left;">
-		<a href="<?php echo $this->config->item('oa_web_index'); ?>/main/list_groups">
+		<a href="<?php echo $this->config->item('oa_web_index'); ?>/main/list_orgs">
 			<?php if (isset($this->config->config['logo']) and $this->config->config['logo'] != '') {
             if ($this->config->config['logo'] == 'oac') {
                 $this->config->config['logo'] = 'logo-banner-oac';
@@ -72,22 +72,5 @@
 		<br />Version<br /><?php echo htmlentities($this->config->item('display_version')); ?>
 		<?php if ($this->config->item('internal_version') < $this->config->item('web_internal_version') and ($this->user->admin == 'y')) {
         echo '<br /><a href="'.$oa_web_index.'/main/help_about" style="color: red;">upgrade</a>'; } ?>
-	</div>
-	<div style="width:100px; float: right; text-align: center;">
-	<?php if (isset($this->config->config['nmis_url']) and $this->config->config['nmis_url'] > "") { ?>
-		<br />NMIS<br /><a href="<?php echo htmlentities($this->config->item('nmis_url')); ?>" target="_blank"><img alt="" style="height:30px" src="<?php echo $this->config->config['oa_web_folder']; ?>/images/logo-nmis.png" /></a>
-	<?php } else { ?>
-		<br />NMIS<br /><a href="https://opmantek.com" target="_blank"><img alt="" style="height:30px" src="<?php echo $this->config->config['oa_web_folder']; ?>/images/logo-nmis.png" /></a>
-	<?php } ?>
-	</div>
-	<div style="width:100px; float: right; text-align: center;">
-	   <br />Dashboard<br /><a href="<?php echo htmlentities($this->config->config['oae_url']); ?>" target="_blank"><img alt="" style="height:30px" src="<?php echo $this->config->config['oa_web_folder']; ?>/images/logo-oae.png" /></a>
-	</div>
-	<div style="width:100px; float: right; text-align: center;">
-	<?php if (isset($this->config->config['maps_url']) and $this->config->config['maps_url'] > "") { ?>
-		<br />Map<br /><a href="<?php echo htmlentities($this->config->item('maps_url')); ?>"  target="_blank" ><img alt="" style="height:30px" src="<?php echo $this->config->config['oa_web_folder']; ?>/images/logo-opmaps.png" /></a>
-	<?php } else { ?>
-		<br />Map<br /><a href="<?php echo $oa_web_index; ?>/main/help_opmaps"><img alt="" style="height:30px" src="<?php echo $this->config->config['oa_web_folder']; ?>/images/logo-opmaps.png" /></a>
-	<?php } ?>
 	</div>
 </div>

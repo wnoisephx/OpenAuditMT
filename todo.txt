@@ -1,0 +1,39 @@
+Credentials
+	add_credentials
+	edit_credentials
+	delete_credentials
+
+Networks
+	edit_network
+	delete_network
+	audit_network
+	activate/deactivate network (toggle_network) (started)
+	add_network -> credential picker
+	add_network -> activate/deactivate network
+	add_network -> not implemented (controller)
+	subnet field (new/edit network diaglog box)
+
+	Each network should have it's own table of devices rather then having one big table of all devices (maybe)
+
+Proxies
+	activate/deactivate proxy
+	edit proxy always return to edit location (should return to where you came from)
+	delete proxy (should ask before delete))
+
+Schedules
+	add_schedule
+	delete_schedule
+	edit_schedule
+	activate/deactivate schedule
+
+Functions
+	Audit
+		switch port 
+
+General
+	Remove the extra database accesses out of the views and move them to the model sections
+	Change all enable/disable icons to 16_greencheck.png and 16_disabled.png
+
+
+Move the credentials to the network edit/add page from the location add/edit page
+  - They should be per network not per location as you can have more then one network per location

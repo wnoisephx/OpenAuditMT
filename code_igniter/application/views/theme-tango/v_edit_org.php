@@ -44,7 +44,7 @@ echo form_open('admin_org/edit_org')."\n";
 	<legend><span style='font-size: 12pt;'>&nbsp;<?php echo __('Organisation Details')?></span></legend>
 	<img class='section_image' src='<?php echo $oa_theme_images;?>/48_home.png' alt='' title='' />
 	<?php
-    if ($org->parent_id == '0') { $org->parent_id = ''; } ?>
+    if ($org->parent_id == '-1') { $org->parent_id = ''; } ?>
 	<table width="90%" cellpadding = "0" cellspacing="0">
 		<tr>
 			<td style='width:50%'>
@@ -55,7 +55,7 @@ echo form_open('admin_org/edit_org')."\n";
                     if (count($org_names) > 0) {
                         foreach ($org_names as $value) {
                             if ($value->id == $org->parent_id) {
-                                echo "\n\t\t\t\t\t\t<option value='".intval($value->id)."' selected>".htmlentities($value->name)."</option>";
+                                echo "\n\t\t\t\t\t\t<option value='-1' selected>".htmlentities($value->org_name)."</option>";
                             } elseif ($value->id == $org->id) {
                                 # do not output itself to be a potential parent.
                             } else {

@@ -36,12 +36,17 @@
 <form action="#" method="post" class='niceforms'>
 	<fieldset id="org_details" class='niceforms'>
 		<legend><span style='font-size: 12pt;'>&nbsp;<?php echo __('Location Details')?></span></legend>
-		<img class='section_image' src='<?php echo $oa_theme_images;?>/48_home.png' alt='' title='' />
+                <a href="../../admin_location/edit_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='' title='' width='48'/></a>
+                <a href="../../admin_location/delete_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='' title='' width='48'/></a>
+                <a href="../../admin_location/add_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='' title='' width='48'/></a>
+                <a href="../../admin_network/add_network/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='' title='' width='48'/></a>
+
 		<table cellpadding = "0" cellspacing="0">
 			<tr>
 				<td valign="top">
 					<p><label for='name'><?php echo __("Name")?>: </label><span id='name' name='name'>&nbsp;<?php echo htmlentities($location->name)?></span></p>
-					<p><label for='devices'># <?php echo __("Devices")?>: </label><span id='devices' name='devices'>&nbsp;<?php echo htmlentities($location->total)?></span></p>
+                                        <p><label for='org_name'><?php echo __("Organization")?>: </label><span id='org_name' name='org_name'>&nbsp;<?php echo htmlentities("blah")?></span></p>
+                                        <p><label for='location_networks'># <?php echo __("networks")?>: </label><span id='location_devices' name='location_devices'>&nbsp;<?php echo htmlentities($location->total)?></span></p>
 					<p><label for='type'><?php echo __("Type")?>: </label><span id='type' name='type'>&nbsp;<?php echo htmlentities($location->type)?></span></p>
 					<p><label for='room'><?php echo __("Room")?>: </label><span id='room' name='room'>&nbsp;<?php echo htmlentities($location->room)?></span></p>
 					<p><label for='suite'><?php echo __("Suite")?>: </label><span id='suite' name='suite'>&nbsp;<?php echo htmlentities($location->suite)?></span></p>
@@ -61,5 +66,49 @@
 		</table>
 	</fieldset>
 </form>
+
+<?php
+$CI=&get_instance();
+$CI->load->model("m_oa_network");
+$query = $CI->m_oa_network->get_location_networks($location->id);
+
+$sortcolumn = 1;
+if (count($query) > 0) {
+    ?>
+<table cellspacing="1" class="tablesorter">
+        <thead>
+                <tr>
+                        <th align='center' width="120"><?php echo __('Systems')?></th>
+                        <th><?php echo __('Network')?></th>
+                        <th><?php echo __('Comments')?></th>
+                        <th align='center' width="80" class='{sorter: false}'><?php echo __('Edit Network')?></th>
+                        <th align='center' width="80" class='{sorter: false}'><?php echo __('Delete Network')?></th>
+                        <th align='center' width="80" class='{sorter: false}'><?php echo __('Audit Network')?></th>
+                </tr>
+        </thead>
+        <tbody>
+        <?php
+            foreach ($query as $key):
+                $edit_pic = "<a href=\"../../admin_network/edit_network/".intval($key->location_id)."\"><img src='".$oa_theme_images."/16_edit.png' alt='' title='' width='16'/></a>";
+                $delete_pic = "<a href=\"../../admin_network/delete_network/".intval($key->location_id)."\"><img src='".$oa_theme_images."/16_delete.png' alt='' title='' width='16'/></a>";
+                $audit_pic = "<a href=\"../../admin_network/audit_network/".intval($key->location_id)."\"><img src='".$oa_theme_images."/16_network.png' alt='' title='' width='16'/></a>";
+                 ?>
+                 <tr>
+                      <td align='center'><?php echo $key->total?></td>
+                      <td><a href="../list_devices/<?php echo $key->location_group_id?>"><?php echo htmlentities($key->ip_address_v4)."/".htmlentities($key->ip_subnet)?></a></td>
+                      <td><?php echo htmlentities($key->network_comments)?></td>
+                      <td align='center'><?php echo $edit_pic?></td>
+                      <td align='center'><?php echo $delete_pic?></td>
+                      <td align='center'><?php echo $audit_pic?></td>
+                 </tr>
+                 <?php endforeach; ?>
+        </tbody>
+</table>
+<?php
+} else {
+    echo "<br />".__('There are no networks for this location').".<br />";
+}
+?>
+
 </div>
 </div>

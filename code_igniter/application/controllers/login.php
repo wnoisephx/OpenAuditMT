@@ -80,8 +80,8 @@ class login extends CI_Controller
         $this->session->set_userdata(array('url'  => ''));
         $uri_string = uri_string();
         // set the form url so if nothing in the session and requested special login page, it has a default
-        if ($form_url == '' and $uri_string == 'login/index/main/list_groups') {
-            $form_url = 'main/list_groups';
+        if ($form_url == '' and $uri_string == 'login/index/main/list_orgs') {
+            $form_url = 'main/list_orgs';
         }
 
         $data['form_url'] = $form_url;
@@ -410,7 +410,7 @@ class login extends CI_Controller
     public function logout()
     {
         $this->session->sess_destroy();
-        redirect('login/index/main/list_groups');
+        redirect('login/index/main/list_orgs');
     }
 
     public function modal()

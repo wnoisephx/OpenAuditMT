@@ -517,4 +517,22 @@ class M_oa_location extends MY_Model
         # return our dataset, ready to be converted to JSON
         return($locations);
     }
+
+   /*
+    * Get all locations for a given org.
+    *
+    * @access        public
+    *
+    * @return array
+    */
+    public function get_org_locations($org_id)
+    {
+        $sql = "SELECT oa_location.*, count(oa_network.location_id) as total FROM oa_location LEFT JOIN oa_network ON oa_network.location_id = oa_location.id where org_id = ? GROUP BY oa_location.id ORDER BY oa_location.name";
+        $data = array($org_id);
+        $sql = $this->clean_sql($sql);
+        $query = $this->db->query($sql,$data);
+        $result = $query->result();
+
+        return ($result);
+    }
 }
