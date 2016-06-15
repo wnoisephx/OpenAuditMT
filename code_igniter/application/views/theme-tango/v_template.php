@@ -83,7 +83,7 @@ function print_something($string)
 	<link rel="stylesheet" type="text/css" href="<?php echo $oa_theme_files; ?>/jquery/css/humanity/tablesorter-style.css" />
 	<script type="text/javascript" src="<?php echo $oa_theme_files; ?>/jquery/js/nicejforms.js"></script>
 	<!-- <script type="text/javascript" src="<?php echo $oa_theme_files; ?>/jquery/js/nicejforms-interface.js" /> -->
-	<link rel="stylesheet" type="text/css" href="<?php echo $oa_theme_files; ?>/jquery/css/humanity/niceforms-default.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo $oa_theme_files; ?>/jquery/css/humanity/niceforms-local.css" />
 	<script type="text/javascript" src="<?php echo $oa_theme_files; ?>/jquery/js/jquery-ui-1.8.13.custom.min.js"></script>
 
 

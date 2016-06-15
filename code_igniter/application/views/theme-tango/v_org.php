@@ -36,19 +36,24 @@
 <form action="#" method="post" class='niceforms'>
 	<fieldset class='niceforms'>
 		<legend><span style='font-size: 12pt;'>&nbsp;<?php echo __('Organisation Details')?></span></legend>
-                <a href="../../admin_org/edit_org/<?php echo $org->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='' title='' width='48'/></a>
-                <a href="../../admin_location/add_location/<?php echo $org->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_plus.png' alt='' title='' width='48'/></a>
-               <?php if ($org->parent_id == '-1') { $org->parent_name = ''; } ?>
-
-		<table cellpadding = "0" cellspacing="0">
-			<tr>
-				<td>
+                <?php if ($org->parent_id == -1) { $org->parent_name = ''; } ?>
+		<div><table style='float: left;'>
+			<tr><td>
 					<p><label for='name'><?php echo __("Name")?>: </label><span id='name' name='name'><?php echo htmlentities($org->name)?></span></p>
-					<p><label for='parent'><?php echo __("Parent Org")?>: </label><span id='parent' name='parent'><a href='<?php echo intval($org->parent_id)?>'><?php echo htmlentities($org->parent_name)?></a></span></p>
+					<p><label for='parent'><?php echo __("Parent Org")?>: </label><span id='parent' name='parent'>
+					<p><a href='<?php echo intval($org->parent_id)?>'><?php echo htmlentities($org->parent_name)?></a></span></p>
 					<p><label for='comments'><?php echo __("Comments")?>: </label><span id='comments' name='comments'><?php echo htmlentities($org->comments)?></span></p>
-				</td>
-			</tr>
+			</td></tr>
 		</table>
+
+		<table style='float: right;'>
+			<tr><td>
+                		<a href="../../admin_org/edit_org/<?php echo $org->id?>"><img align='right' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='Edit Org' title='Edit Org'/></a>
+			</td></tr>
+			<tr><td>
+               			<a href="../../admin_location/add_location/<?php echo $org->id?>"><img align='right' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='Add Location' title='Add Loction'/></a>
+			</td></tr>
+		</tr></table></div>
 	</fieldset>
 </form>
 

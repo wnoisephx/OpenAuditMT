@@ -286,22 +286,6 @@ var modal_content_image = "";
         </ul>
     </li>
 
-    <?php if ($license != 'commercial') { ?>
-        <li><a href='javascript:void(0)'><?php echo mb_strtoupper(__('Upgrade Licenses'))?></a>
-    <?php } else { ?>
-        <li><a href='javascript:void(0)'><?php echo mb_strtoupper(__('Licenses'))?></a>
-    <?php } ?>
-        <ul>
-            <?php if ($license == 'none') { ?>
-            <li><a href='/omk/oae/license_free'><?php echo __('Activate Free License')?></a></li>
-            <?php } ?>
-
-            <li><a href='/omk/opLicense'><?php echo __('Manage Licenses')?></a></li>
-            <li><a href='#' id='buy_more_licenses'><?php echo __('Buy More Licenses')?></a></li>
-            <li><a href='/omk/opLicense'><?php echo __('Restore Licenses')?></a></li>
-        </ul>
-    </li>
-
     <?php if ($include == 'v_main') { ?>
         <li style="float:right; position:relative; padding-right:4px;">
             <form name="search_form" action="<?php echo $oa_web_index?>/main/search_device" method="post">

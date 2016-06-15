@@ -43,27 +43,24 @@ echo form_open('admin_org/edit_org')."\n";
 <fieldset id="org_details" class='niceforms'>
 	<legend><span style='font-size: 12pt;'>&nbsp;<?php echo __('Organisation Details')?></span></legend>
 	<img class='section_image' src='<?php echo $oa_theme_images;?>/48_home.png' alt='' title='' />
-	<?php
-    if ($org->parent_id == '-1') { $org->parent_id = ''; } ?>
 	<table width="90%" cellpadding = "0" cellspacing="0">
 		<tr>
 			<td style='width:50%'>
 				<p><label for='org_name'><?php echo __("Name")?>: </label><input type='text' id='name' name='name' tabindex='1' title='<?php echo __('Organisation Name'); ?>' value="<?php echo htmlentities($org->name); ?>"/><?php echo htmlentities($error_message); ?></p>
 				<p><label for='parent_id'><?php echo __("Parent")?>: </label>
 					<select id='parent_id' name='parent_id' tabindex='2' title='Parent'/>
-					<?php
-                    if (count($org_names) > 0) {
-                        foreach ($org_names as $value) {
-                            if ($value->id == $org->parent_id) {
-                                echo "\n\t\t\t\t\t\t<option value='-1' selected>".htmlentities($value->org_name)."</option>";
-                            } elseif ($value->id == $org->id) {
-                                # do not output itself to be a potential parent.
-                            } else {
-                                echo "\n\t\t\t\t\t\t<option value='".intval($value->id)."'>".htmlentities($value->name)."</option>";
-                            }
-                        }
-                        echo "\n";
-                    } ?>
+					<?php if (count($org_names) > 0) {
+                        			foreach ($org_names as $value) {
+                            				if ($value->id == $org->parent_id) {
+                                				echo "\n\t\t\t\t\t\t<option value='-1' selected>".htmlentities($value->org_name)."</option>";
+                            				} elseif ($value->id == $org->id || $parent_id == '-1') {
+                                				echo "\n\t\t\t\t\t\t<option value='-1' selected> </option>";
+                            				} else {
+                                				echo "\n\t\t\t\t\t\t<option value='".intval($value->id)."'>".htmlentities($value->name)."</option>";
+                            				}
+                        			}
+                        			echo "\n";
+                    			} ?>
 					</select>
 				</p>
 				<p><label for='comments'><?php echo __('Comments')?>: </label><input type='text' id='comments' name='comments' tabindex='4' title='<?php echo __('Comments'); ?>'  value="<?php echo htmlentities($org->comments); ?>"/></p>
