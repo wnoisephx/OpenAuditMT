@@ -1,2 +1,0 @@
-Aug 24 10:14:08 monitor.amplifinity.com 30305 5 U:- C:system F:add_system I:10.1.11.115 M:Audit submission from an IP not in the list of blessed subnets (10.1.11.115)
-Aug 24 10:14:14 monitor.amplifinity.com 30307 5 U:- C:system F:add_system I:10.1.11.115 M:Audit submission from an IP not in the list of blessed subnets (10.1.11.115)
