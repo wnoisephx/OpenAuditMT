@@ -47,10 +47,10 @@
 		</table>
 
 		<table style='float: right;'>
-			<tr><td>Edit Org</td><td>
+			<tr><td>
                 		<a href="../../admin_org/edit_org/<?php echo $org->id?>"><img align='right' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='Edit Org' title='Edit Org'/></a>
 			</td></tr>
-			<tr><td>Add Location</td><td>
+			<tr><td>
                			<a href="../../admin_location/add_location/<?php echo $org->id?>"><img align='right' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='Add Location' title='Add Loction'/></a>
 			</td></tr>
 		</tr></table></div>

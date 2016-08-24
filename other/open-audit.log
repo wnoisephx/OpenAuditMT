@@ -740,3 +740,11 @@ Aug 24 10:42:11 monitor.amplifinity.com 5 Administrator admin_network add_networ
 Aug 24 10:42:11 monitor.amplifinity.com 834 5 U:Administrator C:admin_network F:add_network I:10.1.11.115 M:Access
 Aug 24 10:42:14 monitor.amplifinity.com 5 Administrator admin_network add_network Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
 Aug 24 10:42:14 monitor.amplifinity.com 834 5 U:Administrator C:admin_network F:add_network I:10.1.11.115 M:Access
+Aug 24 10:44:47 monitor.amplifinity.com 5 Administrator admin edit_config Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:44:47 monitor.amplifinity.com 20531 5 U:Administrator C:admin F:edit_config I:10.1.11.115 M:Access
+Aug 24 10:49:48 monitor.amplifinity.com 5 Administrator admin edit_config Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:49:48 monitor.amplifinity.com 30301 5 U:Administrator C:admin F:edit_config I:10.1.11.115 M:Access
+Aug 24 10:53:43 monitor.amplifinity.com 5 Administrator admin edit_config Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:53:43 monitor.amplifinity.com 20548 5 U:Administrator C:admin F:edit_config I:10.1.11.115 M:Access
+Aug 24 10:58:45 monitor.amplifinity.com 5 Administrator admin edit_config Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:58:45 monitor.amplifinity.com 20522 5 U:Administrator C:admin F:edit_config I:10.1.11.115 M:Access

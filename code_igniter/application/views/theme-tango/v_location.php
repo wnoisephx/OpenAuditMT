@@ -61,14 +61,14 @@
 		</table>
 
 		<table style='float: right;'>
-			<tr><td>Edit Location</td><td>
-				<a href="../../admin_location/edit_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='' title='' width='48'/></a>
+			<tr><td>
+				<a href="../../admin_location/edit_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='Edit Location' title='Edit Location' width='48'/></a>
 			</td></tr>
-			<tr><td>Delete Location</td><td>
-                		<a href="../../admin_location/delete_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='' title='' width='48'/></a>
+			<tr><td>
+                		<a href="../../admin_location/delete_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='Delete Location' title='Delete Location' width='48'/></a>
 			</td></tr>
-			<tr><td>Add Network</td><td>
-		                <a href="../../admin_network/add_network/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='' title='' width='48'/></a>
+			<tr><td>
+		                <a href="../../admin_network/add_network/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='Add Network' title='Add Network' width='48'/></a>
 			</td></tr>
 		 </tr></table></div>
 

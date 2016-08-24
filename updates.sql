@@ -28,3 +28,6 @@ UPDATE `oa_org` SET `parent_id` = '-1' WHERE `oa_org`.`id` = 0;
 
 /* oa_location */
 ALTER TABLE `oa_location` ADD `org_id` INT NOT NULL AFTER `group_id`;
+
+/* config options */
+// INSERT INTO `openaudit`.`oa_config` (`config_name`, `config_value`, `config_editable`, `config_edited_date`, `config_edited_by`, `config_description`) VALUES ('show_icon_labels', 'y', 'y', '0000-00-00 00:00:00.000000', '0', 'Show labels below the icons on view/edit pages');
