@@ -134,6 +134,7 @@ echo form_open('admin_location/edit_location')."\n";
     ?></p>
 	<?php } ?>
 	<input type="hidden" value="<?php echo $key->id; ?>" name="id" id="id" />
+	<input type="hidden" value="<?php echo $key->org_id; ?>" name="org_id" id="org_id" />
 </fieldset>
 <?php echo form_close(); ?>
 </div>

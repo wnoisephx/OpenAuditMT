@@ -60,6 +60,26 @@ class M_oa_location extends MY_Model
     }
 
     /**
+     * Get the location's org id.
+     *
+     * @access  public
+     *
+     * @param   org id of location id
+     *
+     * @return string
+     */
+    public function get_org_id($id)
+    {
+        $sql = "SELECT org_id FROM oa_location WHERE id = ? LIMIT 1";
+        $sql = $this->clean_sql($sql);
+        $data = array("$id");
+        $query = $this->db->query($sql, $data);
+        $row = $query->row();
+
+        return ($row->org_id);
+    }
+
+    /**
      * Get the location's group id.
      *
      * @access	public
@@ -247,11 +267,11 @@ class M_oa_location extends MY_Model
     public function add_location($details)
     {
         # need to insert suburb, district, region, area, tags, picture
-        $sql = "INSERT INTO oa_location (name, type, room, suite, level, address, postcode, city, state, country, geo, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        $sql = "INSERT INTO oa_location (name, type, room, suite, level, address, postcode, city, state, country, phone, geo, latitude, longitude) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $sql = $this->clean_sql($sql);
         $data = array("$details->name", "$details->type", "$details->room", "$details->suite",
             "$details->level", "$details->address", "$details->postcode", "$details->city",
-            "$details->state", "$details->country", "$details->geo", "$details->latitude", "$details->longitude", );
+            "$details->state", "$details->country", "$details->phone", "$details->geo", "$details->latitude", "$details->longitude", );
         $query = $this->db->query($sql, $data);
         return($this->db->insert_id());
     }
@@ -289,11 +309,11 @@ class M_oa_location extends MY_Model
     public function edit_location($details)
     {
         # need to insert suburb, district, region, area, tags, picture
-        $sql = "UPDATE oa_location SET name = ?, type = ?, room = ?, suite = ?, level = ?, address = ?, city = ?, postcode = ?, state = ?, country = ?, geo = ?, latitude = ?, longitude = ? WHERE id = ?";
+        $sql = "UPDATE oa_location SET name = ?, type = ?, room = ?, suite = ?, level = ?, address = ?, city = ?, postcode = ?, state = ?, country = ?, phone = ?, geo = ?, latitude = ?, longitude = ? WHERE id = ?";
         $sql = $this->clean_sql($sql);
         $data = array("$details->name", "$details->type", "$details->room", "$details->suite",
             "$details->level", "$details->address", "$details->city", "$details->postcode",
-            "$details->state", "$details->country", "$details->geo", "$details->latitude",
+            "$details->state", "$details->country", "$details->phone", "$details->geo", "$details->latitude",
             "$details->longitude", "$details->id", );
         $query = $this->db->query($sql, $data);
         return(true);

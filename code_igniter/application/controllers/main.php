@@ -62,7 +62,11 @@ class main extends MY_Controller
             header('Cache-Control: max-age=0');
             header('HTTP/1.1 200 OK');
         } else {
-            redirect('main/list_orgs/');
+	    if(strtolower($this->config->item('multi_tenant'))=='y') {
+                redirect('main/list_orgs/');
+	    } else {
+                redirect('main/list_groups/');
+	    }
         }
     }
 

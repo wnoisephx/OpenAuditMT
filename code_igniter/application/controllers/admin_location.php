@@ -63,23 +63,34 @@ class Admin_location extends MY_Controller
         $this->load->model("m_oa_location");
         $this->load->model("m_oa_group");
         $id = $this->data['id'];
+        $org_id = $this->m_oa_location->get_org_id($id);
+
         // Delete the group.
         $group_id = $this->m_oa_location->get_group_id($id);
         $this->m_oa_group->delete_group($group_id);
+
         // Delete the location.
         $this->m_oa_location->delete_location($id);
-        redirect('admin_location/list_locations');
+
+        if(strtolower($this->config->item('multi_tenant'))=='n') {
+            redirect('admin_location/list_locations');
+        } else {
+            redirect('main/view_org/'.$org_id);
+        }
     }
 
     public function delete_group()
     {
         $this->load->model("m_oa_group");
         $this->load->model("m_oa_location");
+
         // We have the location id, need to get the correct group id
         $id = $this->data['id'];
         $group_id = $this->m_oa_location->get_group_id($id);
+
         // Delete the group
         $this->m_oa_group->delete_group($group_id);
+
         // Update the oa_org by removing the group_id
         $this->m_oa_location->set_group_id($id, '0');
         redirect('admin_location/list_locations');
@@ -109,11 +120,15 @@ class Admin_location extends MY_Controller
                 $this->data['include'] = 'v_add_location';
                 $this->load->view('v_template', $this->data);
             }
-            if ($location->group == 'on') {
-                # activate the group
-                redirect('admin_location/activate_group/'.$location->id);
+
+            if(strtolower($this->config->item('multi_tenant'))=='n') {
+                if ($_POST['group'] == 'on') {
+                    redirect('admin_location/activate_group/'.$location->id);
+                 } else {
+                    redirect('admin_location/list_locations');
+                 }
             } else {
-                redirect('admin_location/list_locations');
+                 redirect('main/view_location/'.$location->id);
             }
         }
     }
@@ -299,13 +314,15 @@ class Admin_location extends MY_Controller
 
             if ($error == '0') {
                 $this->m_oa_location->edit_location($location);
-                if ($_POST['group'] == 'on') {
-                    redirect('admin_location/activate_group/'.$_POST['id']);
+		if(strtolower($this->config->item('multi_tenant'))=='n') {
+                    if ($_POST['group'] == 'on') {
+                        redirect('admin_location/activate_group/'.$_POST['id']);
+                    } else {
+                        redirect('admin_location/list_locations');
+   		    }
                 } else {
-                    redirect('admin_location/list_locations');
-                }
-            } else {
-                redirect('admin_location/list_locations');
+                    redirect('main/view_location/'.$_POST['id']);
+	        }
             }
         }
     }

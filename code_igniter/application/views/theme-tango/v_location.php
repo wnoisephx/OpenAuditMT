@@ -65,7 +65,7 @@
 				<a href="../../admin_location/edit_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='Edit Location' title='Edit Location' width='48'/></a>
 			</td></tr>
 			<tr><td>
-                		<a href="../../admin_location/delete_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='Delete Location' title='Delete Location' width='48'/></a>
+                		<a href="../../admin_location/delete_location/<?php echo $location->id?>" onclick="return confirm('Ok to Delete?')"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='Delete Location' title='Delete Location' width='48'/></a>
 			</td></tr>
 			<tr><td>
 		                <a href="../../admin_network/add_network/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='Add Network' title='Add Network' width='48'/></a>
