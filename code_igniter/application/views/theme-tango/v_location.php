@@ -36,12 +36,7 @@
 <form action="#" method="post" class='niceforms'>
 	<fieldset id="org_details" class='niceforms'>
 		<legend><span style='font-size: 12pt;'>&nbsp;<?php echo __('Location Details')?></span></legend>
-                <a href="../../admin_location/edit_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='' title='' width='48'/></a>
-                <a href="../../admin_location/delete_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='' title='' width='48'/></a>
-                <a href="../../admin_location/add_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='' title='' width='48'/></a>
-                <a href="../../admin_network/add_network/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='' title='' width='48'/></a>
-
-		<table cellpadding = "0" cellspacing="0">
+		<div><table style='float: left;'>
 			<tr>
 				<td valign="top">
 					<p><label for='name'><?php echo __("Name")?>: </label><span id='name' name='name'>&nbsp;<?php echo htmlentities($location->name)?></span></p>
@@ -64,6 +59,19 @@
 				</td>
 			</tr>
 		</table>
+
+		<table style='float: right;'>
+			<tr><td>Edit Location</td><td>
+				<a href="../../admin_location/edit_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_edit.png' alt='' title='' width='48'/></a>
+			</td></tr>
+			<tr><td>Delete Location</td><td>
+                		<a href="../../admin_location/delete_location/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_delete_page.png' alt='' title='' width='48'/></a>
+			</td></tr>
+			<tr><td>Add Network</td><td>
+		                <a href="../../admin_network/add_network/<?php echo $location->id?>"><img style='float: right; margin; 10px; ' src='<?php echo $oa_theme_images;?>/48_add_page.png' alt='' title='' width='48'/></a>
+			</td></tr>
+		 </tr></table></div>
+
 	</fieldset>
 </form>
 

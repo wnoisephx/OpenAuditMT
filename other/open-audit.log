@@ -700,3 +700,43 @@ Jun 15 11:08:46 monitor.amplifinity.com 5 Administrator admin_location add_locat
 Jun 15 11:08:46 monitor.amplifinity.com 12637 5 U:Administrator C:admin_location F:add_location I:10.1.11.103 M:Access
 Jun 15 11:09:15 monitor.amplifinity.com 5 Administrator admin_location edit_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
 Jun 15 11:09:15 monitor.amplifinity.com 7154 5 U:Administrator C:admin_location F:edit_location I:10.1.11.103 M:Access
+Jun 21 07:18:57 monitor.amplifinity.com 5 Administrator admin_org edit_org Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Jun 21 07:18:57 monitor.amplifinity.com 6293 5 U:Administrator C:admin_org F:edit_org I:192.168.88.239 M:Access
+Jun 21 07:19:11 monitor.amplifinity.com 5 Administrator admin_org edit_org Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Jun 21 07:19:11 monitor.amplifinity.com 6292 5 U:Administrator C:admin_org F:edit_org I:192.168.88.239 M:Access
+Jun 25 10:11:48 monitor.amplifinity.com 5 Administrator admin_org edit_org Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Jun 25 10:11:48 monitor.amplifinity.com 10514 5 U:Administrator C:admin_org F:edit_org I:192.168.88.239 M:Access
+Jun 25 10:12:51 monitor.amplifinity.com 5 Administrator admin_location edit_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Jun 25 10:12:51 monitor.amplifinity.com 565 5 U:Administrator C:admin_location F:edit_location I:192.168.88.239 M:Access
+Jul 08 19:08:02 monitor.amplifinity.com 5 Administrator admin_org edit_org Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Jul 08 19:08:02 monitor.amplifinity.com 11368 5 U:Administrator C:admin_org F:edit_org I:192.168.88.239 M:Access
+Aug 24 10:14:58 monitor.amplifinity.com 5 Administrator admin_system add_system Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:14:58 monitor.amplifinity.com 30300 5 U:Administrator C:admin_system F:add_system I:10.1.11.115 M:Access
+Aug 24 10:15:31 monitor.amplifinity.com 5 Administrator admin_org edit_org Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:15:31 monitor.amplifinity.com 30285 5 U:Administrator C:admin_org F:edit_org I:10.1.11.115 M:Access
+Aug 24 10:39:54 monitor.amplifinity.com 5 Administrator admin_location edit_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:39:54 monitor.amplifinity.com 20531 5 U:Administrator C:admin_location F:edit_location I:10.1.11.115 M:Access
+Aug 24 10:40:00 monitor.amplifinity.com 5 Administrator admin_location delete_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:40:00 monitor.amplifinity.com 20531 5 U:Administrator C:admin_location F:delete_location I:10.1.11.115 M:Access
+Aug 24 10:40:00 monitor.amplifinity.com 5 Administrator admin_location list_locations Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:40:00 monitor.amplifinity.com 20531 5 U:Administrator C:admin_location F:list_locations I:10.1.11.115 M:Access
+Aug 24 10:40:11 monitor.amplifinity.com 5 Administrator admin_location list_locations Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:40:11 monitor.amplifinity.com 20522 5 U:Administrator C:admin_location F:list_locations I:10.1.11.115 M:Access
+Aug 24 10:40:17 monitor.amplifinity.com 5 Administrator admin_location edit_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:40:17 monitor.amplifinity.com 30305 5 U:Administrator C:admin_location F:edit_location I:10.1.11.115 M:Access
+Aug 24 10:40:21 monitor.amplifinity.com 5 Administrator admin_location list_locations Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:40:21 monitor.amplifinity.com 30305 5 U:Administrator C:admin_location F:list_locations I:10.1.11.115 M:Access
+Aug 24 10:40:31 monitor.amplifinity.com 5 Administrator admin_location add_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:40:31 monitor.amplifinity.com 30305 5 U:Administrator C:admin_location F:add_location I:10.1.11.115 M:Access
+Aug 24 10:41:22 monitor.amplifinity.com 5 Administrator admin_location add_location Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:41:22 monitor.amplifinity.com 833 5 U:Administrator C:admin_location F:add_location I:10.1.11.115 M:Access
+Aug 24 10:41:22 monitor.amplifinity.com 5 Administrator admin_location activate_group Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:41:22 monitor.amplifinity.com 833 5 U:Administrator C:admin_location F:activate_group I:10.1.11.115 M:Access
+Aug 24 10:41:23 monitor.amplifinity.com 5 Administrator admin_location list_locations Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:41:23 monitor.amplifinity.com 833 5 U:Administrator C:admin_location F:list_locations I:10.1.11.115 M:Access
+Aug 24 10:41:39 monitor.amplifinity.com 5 Administrator admin_network add_network Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:41:39 monitor.amplifinity.com 20548 5 U:Administrator C:admin_network F:add_network I:10.1.11.115 M:Access
+Aug 24 10:42:11 monitor.amplifinity.com 5 Administrator admin_network add_network Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:42:11 monitor.amplifinity.com 834 5 U:Administrator C:admin_network F:add_network I:10.1.11.115 M:Access
+Aug 24 10:42:14 monitor.amplifinity.com 5 Administrator admin_network add_network Could not open requested log file at /usr/local/open-audit/other/log_access.log, opening traditional log file instead. File exists. Check it's permissions are OK for the web server user. Permissions are 644
+Aug 24 10:42:14 monitor.amplifinity.com 834 5 U:Administrator C:admin_network F:add_network I:10.1.11.115 M:Access
