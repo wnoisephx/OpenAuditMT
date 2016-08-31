@@ -158,12 +158,12 @@ if (defined('ENVIRONMENT')) {
  **/
     if ((string) php_uname('s') == 'Windows NT') {
         // windows
-        $system_path = 'c:/xampplite/open-audit/code_igniter/system';
+        $system_path = 'c:/xampplite/open-auditMT/code_igniter/system';
     } else {
         // linux
-        $system_path = '/usr/local/open-audit/code_igniter/system';
-        if ( file_exists('/home/vagrant/Code/open-audit')) {
-            $system_path = '/home/vagrant/Code/open-audit/code_igniter/system';
+        $system_path = '/usr/local/open-auditMT/code_igniter/system';
+        if ( file_exists('/home/vagrant/Code/open-auditMT')) {
+            $system_path = '/home/vagrant/Code/open-auditMT/code_igniter/system';
         }
     }
 
@@ -183,12 +183,12 @@ if (defined('ENVIRONMENT')) {
  **/
     if ((string) php_uname('s') == 'Windows NT') {
         // windows
-        $application_folder = 'c:/xampplite/open-audit/code_igniter/application';
+        $application_folder = 'c:/xampplite/open-auditMT/code_igniter/application';
     } else {
         // linux
-        $application_folder = '/usr/local/open-audit/code_igniter/application';
-        if ( file_exists('/home/vagrant/Code/open-audit')) {
-            $application_folder = '/home/vagrant/Code/open-audit/code_igniter/application';
+        $application_folder = '/usr/local/open-auditMT/code_igniter/application';
+        if ( file_exists('/home/vagrant/Code/open-auditMT')) {
+            $application_folder = '/home/vagrant/Code/open-auditMT/code_igniter/application';
         }
     }
 /*
